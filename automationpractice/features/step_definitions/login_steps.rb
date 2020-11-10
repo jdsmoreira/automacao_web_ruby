@@ -9,3 +9,7 @@ end
 Então("devo ver a mensagem {string}") do |expect_message|
   expect(@login_page.alert_new_account).to eql expect_message
 end
+
+Quando("submeto minhas credenciais com: {string} e {string}") do |email, password|
+  @login_page.login(email, password)
+end
