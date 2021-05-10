@@ -1,0 +1,19 @@
+---
+- title: nome é obrigatorio
+  payload:  
+    email: "luiz@ig.com.br"
+    password: "pwd123"
+  code: 412
+  error: required name
+- title: email é obrigatorio
+  payload:  
+    name: "José sem email"    
+    password: "pwd123"
+  code: 412
+  error: required email  
+- title: password é obrigatorio
+  payload:  
+    name: "Maria sem senha"
+    email: "maria@bol.com.br"    
+  code: 412
+  error: required password    
