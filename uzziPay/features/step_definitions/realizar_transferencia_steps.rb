@@ -14,8 +14,8 @@ end
 Dado("informe os dados do favorecido") do
   @realizar_transferencia_page.seleciona_banco("Nu Pagamentos S.A.")
   @realizar_transferencia_page.agencia.set "0001"
-  @realizar_transferencia_page.conta.set "3190429-6"
-  @realizar_transferencia_page.cpf_cnpj.set "03211498150"
+  @realizar_transferencia_page.conta.set "2081218-6"
+  @realizar_transferencia_page.cpf_cnpj.set "02221438145"
   @realizar_transferencia_page.seleciona_tipo_conta("CONTA CORRENTE").click
   @realizar_transferencia_page.nome_favorecido.set "JEFERSON DUARTE SOUZA MOREIRA"
   @realizar_transferencia_page.valor_da_transferencia.set "0,09"
@@ -41,7 +41,7 @@ end
 Então("deve listar a transferência") do
   expect(@confirmar_aprovar_page.get_registro_table("1", "1")).to eql "JEFERSON DUARTE SOUZA MOREIRA"
   expect(@confirmar_aprovar_page.get_registro_table("1", "2")).to eql "260 - NU PAGAMENTOS S.A."
-  expect(@confirmar_aprovar_page.get_registro_table("1", "3")).to eql "0001/3190429-6"
+  expect(@confirmar_aprovar_page.get_registro_table("1", "3")).to eql "0001/2081218-6"
   expect(@confirmar_aprovar_page.get_registro_table("1", "4").strip).to eql "0,09"
 end
 
